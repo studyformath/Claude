@@ -1,0 +1,23 @@
+[project]
+name = "gdautodeco"
+version = "0.1.0"
+description = "Procedural (and optionally AI-directed) decoration for Geometry Dash layouts"
+requires-python = ">=3.10"
+dependencies = ["pillow>=9", "numpy>=1.22"]
+
+[project.optional-dependencies]
+ai = ["anthropic>=1.11"]
+test = ["pytest>=7"]
+
+[project.scripts]
+gdautodeco = "gdautodeco.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["gdautodeco"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
